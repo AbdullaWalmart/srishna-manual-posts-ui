@@ -1,0 +1,140 @@
+.upload-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 20px 0;
+}
+
+.upload-card {
+  width: 100%;
+  max-width: 520px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.upload-card h1 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.upload-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.upload-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.upload-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.upload-label input[type="file"] {
+  padding: 10px 12px;
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  background: rgba(10, 10, 18, 0.6);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.upload-filename {
+  font-size: 0.85rem;
+  color: var(--link-color);
+}
+
+.upload-preview {
+  margin-bottom: 8px;
+  padding: 16px;
+  background: rgba(10, 10, 18, 0.6);
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+}
+
+.upload-preview-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.upload-preview-media-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: 220px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #111;
+}
+
+.upload-preview-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.upload-preview-media-wrap video.upload-preview-media {
+  object-fit: contain;
+}
+
+.upload-preview-text {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 72px;
+  overflow-y: auto;
+}
+
+.upload-textarea {
+  padding: 12px 14px;
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  background: rgba(10, 10, 18, 0.6);
+  color: var(--text-primary);
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.upload-textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.upload-submit {
+  padding: 14px 20px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.upload-submit:hover:not(:disabled) {
+  background: #d63850;
+}
+
+.upload-error {
+  padding: 12px;
+  background: rgba(231, 76, 60, 0.15);
+  border: 1px solid var(--danger);
+  border-radius: 10px;
+  color: #f88;
+  font-size: 0.9rem;
+}

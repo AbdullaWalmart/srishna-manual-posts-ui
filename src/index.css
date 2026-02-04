@@ -1,0 +1,67 @@
+:root {
+  --page-bg: linear-gradient(160deg, #0a0a12 0%, #0f0f1a 25%, #12122a 50%, #0a1628 75%, #0d2137 100%);
+  --page-bg-solid: #0a0a12;
+  --header-bg: rgba(15, 52, 96, 0.9);
+  --card-bg: rgba(26, 26, 46, 0.95);
+  --card-border: rgba(45, 45, 68, 0.9);
+  --text-primary: #eaeaea;
+  --text-muted: #a0a0b0;
+  --link-color: #6eb5e8;
+  --accent: #e94560;
+  --accent-secondary: #0f3460;
+  --success: #2ecc71;
+  --danger: #e74c3c;
+  --table-header-bg: rgba(15, 52, 96, 0.5);
+  --table-row-hover: rgba(255, 255, 255, 0.03);
+  --table-border: rgba(255, 255, 255, 0.08);
+  --footer-bg: rgba(15, 52, 96, 0.92);
+  --footer-border: rgba(233, 69, 96, 0.35);
+  --footer-text: #eaeaea;
+  --footer-muted: #808090;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  background: var(--page-bg-solid);
+  background: var(--page-bg);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
