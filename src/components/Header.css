@@ -59,12 +59,6 @@
   letter-spacing: 0.02em;
 }
 
-.logo-sub {
-  font-weight: 400;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
 .header-nav {
   display: flex;
   align-items: center;
@@ -107,4 +101,113 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   padding: 6px 8px;
+}
+
+/* Hamburger: hidden on desktop */
+.header-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  border-radius: 6px;
+}
+.header-burger:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+.header-burger-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+}
+
+/* Mobile menu: hide desktop nav, show burger + dropdown */
+.header-nav--mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header-nav--desktop {
+    display: none;
+  }
+
+  .header-burger {
+    display: flex;
+  }
+
+  .header-nav--mobile {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--card-border);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    padding: 8px 12px 12px;
+    gap: 2px;
+    align-items: stretch;
+  }
+
+  .header-nav--mobile .header-user {
+    padding: 12px 14px;
+    max-width: none;
+    border-bottom: 1px solid var(--card-border);
+    margin-bottom: 4px;
+  }
+
+  .header-nav--mobile .header-link,
+  .header-nav--mobile .header-link--btn {
+    padding: 14px 14px;
+    justify-content: flex-start;
+    min-height: 48px;
+    min-width: auto;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 6px;
+  }
+}
+
+/* Mobile: compact header bar */
+@media (max-width: 640px) {
+  .header-inner {
+    padding: 8px 12px;
+    gap: 12px;
+    position: relative;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .logo-img-wrap {
+    width: 34px;
+    height: 34px;
+  }
+
+  .logo-img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Desktop: ensure nav stays in one row, no wrap */
+@media (min-width: 769px) {
+  .header-nav {
+    flex-wrap: nowrap;
+  }
+
+  .header-link,
+  .header-link--btn {
+    white-space: nowrap;
+  }
 }

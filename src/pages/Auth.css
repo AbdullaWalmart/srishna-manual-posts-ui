@@ -171,3 +171,48 @@
   font-size: 0.95rem;
   margin-bottom: 12px;
 }
+
+@media (max-width: 640px) {
+  .auth-page {
+    padding: 16px 12px;
+    align-items: flex-start;
+    min-height: 100vh;
+  }
+
+  .auth-card,
+  .auth-card--tabs {
+    max-width: 100%;
+    padding: 24px 20px;
+  }
+
+  .auth-card h1,
+  .auth-title {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+
+  .auth-card input {
+    min-height: 48px;
+    font-size: 16px; /* prevents zoom on focus in iOS */
+    padding: 14px 16px;
+  }
+
+  .auth-submit {
+    min-height: 48px;
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .auth-tab {
+    min-height: 44px;
+    padding: 12px 10px;
+    font-size: 0.9rem;
+  }
+
+  .auth-links a,
+  .auth-link-btn {
+    display: inline-block;
+    min-height: 44px;
+    line-height: 44px;
+  }
+}

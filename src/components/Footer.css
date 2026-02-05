@@ -70,3 +70,26 @@
   flex-shrink: 0;
   white-space: nowrap;
 }
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 10px 12px;
+    padding-bottom: max(10px, env(safe-area-inset-bottom, 0));
+  }
+
+  .footer-inner {
+    gap: 10px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-size: 0.95rem;
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    white-space: normal;
+    text-align: center;
+  }
+}

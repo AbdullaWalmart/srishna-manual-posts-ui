@@ -138,3 +138,41 @@
   color: #f88;
   font-size: 0.9rem;
 }
+
+@media (max-width: 640px) {
+  .upload-page {
+    padding: 12px 0;
+    align-items: flex-start;
+  }
+
+  .upload-card {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  .upload-card h1 {
+    font-size: 1.25rem;
+  }
+
+  .upload-desc {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+
+  .upload-label input[type="file"] {
+    min-height: 44px;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .upload-textarea {
+    min-height: 120px;
+    font-size: 16px; /* prevents zoom on focus in iOS */
+  }
+
+  .upload-submit {
+    min-height: 48px;
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+}

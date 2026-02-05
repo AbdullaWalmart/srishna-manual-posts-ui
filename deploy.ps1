@@ -1,14 +1,16 @@
 # Build, push, and deploy srishna-manual-posts-ui to Google Cloud Run
 # Usage:
-#   1. Set BACKEND_URL to your backend Cloud Run URL (e.g. https://srishna-image-upload-xxxxx-as.a.run.app)
-#   2. Run: .\deploy.ps1
+#   1. From project root (srishna-manual-posts-ui): .\deploy.ps1
+#   2. If UI changes don't appear, use: .\deploy.ps1 -NoCache
 #
 # Optional: pass backend URL as argument
 #   .\deploy.ps1 -BackendUrl "https://srishna-image-upload-xxxxx-as.a.run.app"
 
 param(
     # Production backend; override if needed
-    [string]$BackendUrl = $env:BACKEND_URL
+    [string]$BackendUrl = $env:BACKEND_URL,
+    # Force full rebuild so UI changes are included (use when deploy shows old version)
+    [switch]$NoCache
 )
 if (-not $BackendUrl) {
     $BackendUrl = "https://srishna-image-upload-712085419978.asia-south1.run.app"
@@ -21,8 +23,14 @@ $Region = "asia-south1"
 # API base URL must end with /api (backend serves under /api)
 $ApiUrl = if ($BackendUrl) { "$($BackendUrl.TrimEnd('/'))/api" } else { "/api" }
 
-Write-Host "Building image (VITE_API_URL=$ApiUrl)..." -ForegroundColor Cyan
-docker build -t $Image --build-arg "VITE_API_URL=$ApiUrl" .
+$BuildArgs = @("-t", $Image, "--build-arg", "VITE_API_URL=$ApiUrl")
+if ($NoCache) {
+    $BuildArgs += "--no-cache"
+    Write-Host "Building image with --no-cache (VITE_API_URL=$ApiUrl)..." -ForegroundColor Cyan
+} else {
+    Write-Host "Building image (VITE_API_URL=$ApiUrl)..." -ForegroundColor Cyan
+}
+docker build @BuildArgs .
 
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 

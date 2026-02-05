@@ -493,9 +493,108 @@
 @media (max-width: 900px) {
   .posts-table-wrap {
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .posts-table {
     min-width: 680px;
+  }
+}
+
+/* Mobile: stacked toolbar, touch-friendly buttons, full-bleed popup */
+@media (max-width: 640px) {
+  .posts-list-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .posts-list-sub {
+    font-size: 0.8rem;
+  }
+
+  .posts-tabs {
+    margin-bottom: 10px;
+  }
+
+  .posts-tab {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .posts-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .posts-toolbar-left,
+  .posts-toolbar-right {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .posts-search {
+    min-width: 0;
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 16px; /* prevents zoom on focus in iOS */
+  }
+
+  .posts-sort,
+  .posts-export-btn,
+  .posts-page-size-select {
+    min-height: 44px;
+    padding: 10px 12px;
+  }
+
+  .posts-table-btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+
+  .posts-pagination {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .posts-pagination-btn {
+    min-height: 44px;
+    padding: 10px 16px;
+  }
+
+  .posts-image-popup-overlay {
+    padding: 12px;
+    align-items: flex-end;
+  }
+
+  .posts-image-popup {
+    max-width: 100%;
+    max-height: 95vh;
+    padding: 44px 16px 16px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .posts-image-popup-close {
+    top: 8px;
+    right: 8px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+  }
+
+  .posts-image-popup-media {
+    max-height: min(60vh, 400px);
+  }
+
+  .posts-image-popup-media-wrap video.posts-image-popup-media {
+    min-height: 180px;
   }
 }
